@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import axiosApi from '../../axiosApi';
 import Spinners from '../Spinner/Spinner';
 
-const AddPost = () => {
+const AddPost = ({history}) => {
 
     const [post, setPost] = useState({
         title: '',
@@ -34,6 +34,7 @@ const AddPost = () => {
             await axiosApi.post('/posts.json', { post , date})
         } finally {
             setLoading(false);
+            history.replace('/')
         }
     }
 

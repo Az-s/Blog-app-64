@@ -24,7 +24,7 @@ const Posts = () => {
     return (
         <>
             {allPosts.map(post => (
-                <Card style={{ marginTop: '5rem' }} className='mx-5' key={post.id} >
+                <Card style={{ margin: '5rem' }} className='mx-5' key={post.id} >
                     <Card.Header>Created on: {post.date}</Card.Header>
                     <Card.Body>
                         <Card.Title>{post.post.title}</Card.Title>
