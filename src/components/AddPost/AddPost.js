@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Card } from 'react-bootstrap';
+import dayjs from 'dayjs';
 import axiosApi from '../../axiosApi';
 import Spinners from '../Spinner/Spinner';
 
@@ -9,6 +10,8 @@ const AddPost = () => {
         title: '',
         description: '',
     });
+
+    const [date] = useState(dayjs().format('DD.MM.YYYY HH.mm'));
 
     const [loading, setLoading] = useState(false);
 
@@ -28,7 +31,7 @@ const AddPost = () => {
         setLoading(true);
 
         try {
-            await axiosApi.post('/posts.json', { post })
+            await axiosApi.post('/posts.json', { post , date})
         } finally {
             setLoading(false);
         }
