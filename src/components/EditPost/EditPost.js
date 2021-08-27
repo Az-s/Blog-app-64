@@ -56,6 +56,8 @@ const EditPost = ({ match, history }) => {
                         name='title'
                         placeholder={editPosts.post.title}
                         value={post.title}
+                        // value={editPosts.post.title}
+                        // возникла проблема с value точнее с тем как получить данные с возможностью менять их
                         onChange={onInputChange}
                     />
                 </Form.Group>
@@ -66,6 +68,7 @@ const EditPost = ({ match, history }) => {
                         name='description'
                         placeholder={editPosts.post.description}
                         value={post.description}
+                        // value={editPosts.post.description}
                         onChange={onInputChange}
                     />
                 </Form.Group>
