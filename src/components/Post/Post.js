@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 const Post = ({ match , history}) => {
@@ -20,8 +21,6 @@ const Post = ({ match , history}) => {
         history.replace('/');
     }
     
-    console.log(editPost);
-
     return editPost && (
         <Card style={{ marginTop: '5rem' }} >
             <Card.Header>{editPost.date}</Card.Header>
@@ -31,7 +30,7 @@ const Post = ({ match , history}) => {
                     {editPost.post.description}
                 </Card.Text>
                 <Card.Body className='d-flex justify-content-between'>
-                    <Button variant="primary">Edit</Button>
+                    <NavLink to={'post/' + match.params.id + '/edit'}><Button variant="primary">Edit</Button></NavLink>
                     <Button variant="danger" onClick={deletePost}>&#10006;</Button>
                 </Card.Body>
             </Card.Body>

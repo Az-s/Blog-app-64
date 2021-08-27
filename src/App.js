@@ -7,6 +7,7 @@ import About from './components/AboutUs/About';
 import AddPost from './components/AddPost/AddPost';
 import Contacts from './components/Contacts/Contacts';
 import Post from './components/Post/Post';
+import EditPost from './components/EditPost/EditPost';
 import './App.css';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Container>
           <Route exact path='/' component={Posts} />
           <Route path='/post:id' component={Post} />
+          <Route path='/post/:id/edit' component={EditPost} />
           <Route path='/add' component={AddPost} />
           <Route path='/contacts' component={Contacts} />
           <Route path='/about' component={About} />
