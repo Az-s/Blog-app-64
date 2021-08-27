@@ -1,0 +1,11 @@
+.about {
+    padding: 40px;
+}
+.about a {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+.about a:hover {
+    text-decoration: underline;
+}
