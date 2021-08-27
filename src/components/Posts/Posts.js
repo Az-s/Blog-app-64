@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import axiosApi from '../../axiosApi';
 import './Posts.css';
 
 const Posts = () => {
@@ -21,6 +20,7 @@ const Posts = () => {
         fetchData().catch(console.error);
     }, []);
 
+
     return (
         <>
             {allPosts.map(post => (
@@ -28,7 +28,7 @@ const Posts = () => {
                     <Card.Header>Created on: {post.date}</Card.Header>
                     <Card.Body>
                         <Card.Title>{post.post.title}</Card.Title>
-                        <NavLink to='/post'><Button variant="outline-secondary" className='mt-2 btn-p'>Read more &#xbb;</Button></NavLink>
+                        <NavLink to={'/post' + post.id}><Button variant="outline-secondary" className='mt-2 btn-p'>Read more &#xbb;</Button></NavLink>
                     </Card.Body>
                 </Card>
             ))}

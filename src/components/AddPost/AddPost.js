@@ -34,7 +34,7 @@ const AddPost = ({history}) => {
             await axiosApi.post('/posts.json', { post , date})
         } finally {
             setLoading(false);
-            history.replace('/')
+            history.replace('/');
         }
     }
 
